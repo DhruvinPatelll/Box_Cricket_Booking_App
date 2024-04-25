@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+   {% load static %}
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <title>Tranquil</title>
+      <link rel="icon" type="image/png" href="{% static 'img/logo2.png' %}">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+      <link href="{% static 'css/bms/style_index.css' %}" type="text/css"  rel="stylesheet">
+      <script src="{% static 'js/bms/script.js' %}"></script>
+      <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+      <style>
+         
+      </style>
+   </head>
+   <body>        
+      <div class="header">
+         <div class="header-left">
+            <div>
+               <img src="{% static 'img/logo3.png' %}" style="height: 300px; margin: 20px 0px 20px 50px;" alt="logo">
+            </div>
+            <div>
+               <h1 style="margin-left:70px;font-size:50px;">Box Cricket Venues In GUJARAT.</h1>
+               <p style="color:white;margin-left:100px;font-size:30px;font-family:Apple Chancery, cursive;">Explore and book the top box cricket venues in Gujarat!</p>
+            </div>
+         </div>
+         <div>
+            <img src="{% static 'img/header.jpg' %}" style="height: 400px; width: 640px;padding:100px" alt="header">
+         </div>
+      </div>
+      <div class="banner">
+         <h2 style="color:white;font-size:40px;margin:10px 300px 10px 250px;">Check out the top box cricket venues in Gujarat</h2>
+         <p style="color:white;font-family:Apple Chancery, cursive;font-size:25px;margin:0px 300px 40px 250px;">Cricket lover? You have reached the one-stop destination for all sports buffs! Choose from numerous box cricket turfs in Gujarat. Compare pictures, ratings, location, pricing and book the one you like in real-time. No hassle of calling multiple venues, just look & book online instantly on Tranquil!</p>
+      </div>
+      <div class="search-filter-sort">
+         <div class="search-container">
+             <input type="text" class="search-input" id="search-input" placeholder="Search..."/>
+             <button type="button" class="search-button" id="search-button">
+                 <i class="fa fa-search"></i>
+             </button>
+         </div>
+         <select class="filter-select" id="filter-select">
+            <option value="">Filter by City</option>
+            {% for city in cities %}
+                <option value="{{ city }}">{{ city }}</option>
+            {% endfor %}
+        </select>
+         <select class="sort-select" id="sort-select">
+             <option value="">Sort by...</option>
+             <option value="name">Name</option>
+             <option value="price">Price: Low To High</option>
+             <option value="-price">Price: High To Low</option>
+         </select>
+     </div>
+      <div class="card-container">
+         {% for g in ground %}
+         <a style="height:100%;width:33%;text-decoration:none;" href="{% url 'ground_detail' ground_slug=g.slug %}">
+            <div class="card">
+               <img src="{{ g.image.url }}" alt="{{ g.name }}">
+               <div class="card-content">
+                  <h2>{{ g.name }}</h2>
+                  <p><i class="fa-solid fa-location-dot" style="color: #e01b24;"></i>&nbsp;{{ g.venue }}, {{ g.city }}</p>
+               </div>
+            </div>
+         </a>
+      {% endfor %}   
+      </div>
+   </body>
+</html>

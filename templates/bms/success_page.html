@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Success</title>
+    <link href="{% static 'css/bms/style_success_page.css' %}" type="text/css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="{% static 'img/logo2.png' %}">
+</head>
+<body>
+
+<div class="success-container">
+    <span class="success-icon">&#10004;</span>
+    <h1>Booking Successful!</h1>
+    <p>Your reservation has been confirmed.</p>
+    <a href="{% url 'home' %}" class="go-back-button">Go Back</a>
+</div>
+
+</body>
+</html>
+
+

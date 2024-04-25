@@ -1,0 +1,88 @@
+<html>
+    {% load static %}
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <title>Login</title>
+      <link rel="icon" type="image/png" href="{% static 'img/logo2.png' %}">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+      <link href="{% static 'css/bms/style_login.css' %}" type="text/css" rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+    <body>
+        <div class="header">
+            <div class="logo">
+                <img src="{% static 'img/logo3.png'%}" style="height:140px;padding:5px;margin-left:500px;" alt="logo">
+            </div>
+            <h1 style="margin-left:100px;margin-top:30px;color:white;font-size:50px;">LOGIN</h1>
+         </div>
+         {% if messages %}
+         {% for message in messages %}
+             {% if message.tags == 'error' %}
+             <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>{{message}}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+             {% endif %}        
+         {% endfor %}
+         {% endif %} 
+         <div class="main">
+            <div class="shop_top">
+               <div class="container">
+                  <div class="col-md-6">
+                     <div class="login-title">
+                        <h2 class="title" style="color:white;margin-top:50px;">Registered Customers</h2>
+                        <div id="loginbox" class="loginbox">
+                           <form action="{% url 'login' %}" method="POST" name="login" id="login-form">
+                           
+{% comment %} REDIRECT TO NEXT PAGE WHICH SHOWS IN URL WHEN WE REDIRECT ON LOGIN PAGE BY CLICKING ON PARTICULAR GROUND. {% endcomment %}
+                           
+                            {% if request.GET.next %}
+                                <input type="hidden" name="next" value="{{ request.GET.next }}">
+                            {% endif %}
+                              {% csrf_token %}
+                              {% if form.errors %}
+                                 <div class="alert alert-danger">
+                              {% for field, error in form.errors.items %}
+                                  {{ field|title }}: {{ error }}
+                              {% endfor %}
+                                 </div>
+                              {% endif %}
+                                 
+                              <fieldset class="input">
+                                 <p id="login-form-username">
+                                    <label for="modlgn_username">Username</label>
+                                    <input id="modlgn_username" type="text" placeholder="Enter Username" name="username" class="inputbox" size="18" autocomplete="off" required>
+                                 </p>
+                                 <p id="login-form-password">
+                                    <label for="modlgn_passwd">Password</label>
+                                    <input id="modlgn_passwd" type="password" placeholder="Enter Password" name="password" class="inputbox" size="18" autocomplete="off" required>
+                                 </p>
+                                 <div class="remember">
+                                    <input style="width:350px;margin-top:30px;margin-left:175px;" type="submit" name="Submit" class="button" value="Login">
+                                    <div class="clear"></div>
+                                 </div>
+                              </fieldset>
+                           </form>
+                        </div>
+                     </div>
+                     <div class="clear"></div>
+                  </div>
+                  <div class="col-md-6">
+                     <h2 class="title" style="color:white;">New Customers</h2>
+                     <div class="login-page">
+                        <p>Cricket lover? You have reached the one-stop destination for all sports buffs! Choose from numerous box cricket turfs in Gujarat. Compare pictures, ratings, location, pricing and book the one you like in real-time. No hassle of calling multiple venues, just look & Register yourself instantly on Tranquil!</p>
+                        <div class="button1">
+
+{% comment %} MODIFY REDIRECT URL TO ADD FUNCTION OF NEXT PAGE AFTER SUCCESSFULL REGISTERATION. {% endcomment %}
+                            <a href="{% url 'register' %}?next={{ request.GET.next }}"><input style="width:350px;margin-top:30px;margin-left:175px;"type="submit" name="Submit" value="Create an Account"></a>
+                        </div>
+                        <div class="clear"></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>  
+      </body>     

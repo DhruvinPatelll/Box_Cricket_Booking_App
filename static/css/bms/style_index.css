@@ -1,0 +1,133 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color:#00112b;
+    }
+    .header{
+    height:600px;
+    background-color:black;
+    display:flex;
+    justify-content:space-between;
+    }
+    .header {
+    height: 700px;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    }
+    .card-container {
+    margin:0px 200px 0px 200px;
+    display: flex;
+    padding: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    }
+    .card-button{
+    display: inline-block;
+    text-decoration: none;
+    }
+    .card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color:white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%; /* Adjust the width based on your design */
+    margin-bottom: 20px; /* Adjust the margin as needed */
+    box-sizing: border-box;
+    }
+    .card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    }
+    .card-content {
+    padding: 15px;
+    margin:0px;
+    }
+    h2{
+    font-family: "Times New Roman", Times, serif;
+    color:black;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom:0px;
+    margin-top:5px;
+    }
+    p{
+    color:#5e3eab;
+    margin-top:5px;
+    margin-bottom:0px;
+    }
+    h4{
+    margin-bottom:0px;
+    }
+    h1{
+    color:white;
+    font-weight: bold;
+    font-size: 60px;
+    }
+    .rating-price{
+    display:flex;
+    justify-content:space-between;
+    }
+    .rating{
+    width:150px;
+    }  logo
+    header{
+    margin-bottom:5px;
+    }
+    .search-filter-sort {
+    display: flex;
+    margin-bottom: 20px;
+    }
+    .search-input {
+    margin-left:220px;
+    width: 325px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0px 0px 4px;
+    }
+    .filter-select {
+    margin-left:100px;
+    width: 373px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    }
+    .sort-select {
+    margin-left:100px;
+    width: 373px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    }
+    .search-container {
+    display: flex;
+    align-items: center;
+    }
+    .search-button {
+    padding: 8px;
+    height:34px;
+    background-color: white;
+    border: none;
+    border-radius: 0px 4px 4px 0px;
+    cursor: pointer;
+    }
+
+@media only screen and (max-width: 991px) {
+    .header {
+        height: 500px; 
+    }
+    .card-container {
+        margin: 0 20px; 
+    }
+    .search-input,
+    .filter-select,
+    .sort-select {
+        margin-left: 20px; 
+        width: calc(100% - 40px); 
+    }
+}

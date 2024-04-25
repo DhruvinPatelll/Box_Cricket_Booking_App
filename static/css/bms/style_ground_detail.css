@@ -1,0 +1,185 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color:white;
+    }
+    p{
+    font-family:"Times New Roman", Times, serif;
+    width:500px;
+    font-size:20px;
+    }
+    h2{
+    margin-left:50px;
+    }
+    h1{
+    margin:0px;
+    margin-top:40px;
+    margin-left:50px;
+    font-weight: bold;
+    }
+    .header{
+    background-color:black;
+    height:150px;
+    display:flex;
+    justify-content:space-between;
+    }
+    .contact-login{
+    margin-right:300px;
+    margin-top:10px;
+    }
+    .contact-logout{
+       margin-right:300px;
+       margin-top:10px;
+       }
+    .contact-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top:40px;
+    }
+    .login-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top:20px;
+    margin-left:10px;
+    }
+    .logout-button {
+       display: inline-block;
+       padding: 10px 20px;
+       font-size: 16px;
+       font-weight: bold;
+       text-align: center;
+       text-decoration: none;
+       background-color: black;
+       color: white;
+       border-radius: 5px;
+       transition: background-color 0.3s ease;
+       margin-top:20px;
+       margin-left:10px;
+    }   
+    .direction-button {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: white;
+    color: #26a269;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top:20px;
+    margin-left:50px;
+    }
+    .container{
+    height:350px;
+    background-color:white;
+    display:flex;
+    }
+    .booking{
+    height:60px;
+    background-color:#dedede;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .buttons-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    }
+    .tab-button {
+    background-color: #dedede;
+    color: black;
+    border: none;
+    cursor: pointer;
+    margin: 0 10px;
+    height: 60px;
+    font-size:20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-left:250px;
+    padding:0px 45px;
+    border-radius:10px;
+    }
+    .tab-content {
+    display: none;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 20px;
+    }
+    .active-tab {
+    display: block;
+    }
+    .tab-button:hover {
+    background-color: black;
+    color:white;
+    }
+    .contact-button:hover {
+    background-color: white;
+    color:black;
+    }
+    .login-button:hover {
+    background-color: white;
+    color:black;
+    }
+    .logout-button:hover {
+       background-color: white;
+       color:black;
+       }
+    .tab-content {
+    display: none;
+    }
+    .active-tab {
+    display: block;
+    }
+    .container-slot {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    label {
+    margin-bottom: 5px;
+    }
+    input, select {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    }
+    .chg{
+    color:#267019;
+    }
+    button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+
+@media only screen and (min-width: 0px) and (max-width: 9999px) {
+   body {
+       font-size: 16px;
+   }
+}
