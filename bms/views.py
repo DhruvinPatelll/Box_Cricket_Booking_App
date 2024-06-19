@@ -1,10 +1,12 @@
 from django.contrib import messages
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Stadium, Booking, Pitch
-from django.contrib.auth.models import User, auth
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 import razorpay
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib.sessions.models import Session
 
 
 def Home(request):
@@ -88,7 +90,7 @@ def Register(request):
                     username=username, password=pass1, email=email
                 )
                 user.save()
-                auth.login(request, user)
+                login(request, user)
                 messages.success(request, "Registration successful.")
                 next_url = request.POST.get("next")
                 return redirect(next_url) if next_url else redirect("home")
@@ -104,10 +106,12 @@ def Login(request):
         username = request.POST["username"]
         password = request.POST["password"]
 
-        user = auth.authenticate(username=username, password=password)
+        user = authenticate(username=username, password=password)
 
         if user is not None:
-            auth.login(request, user)
+            login(request, user)
+            request.session['username'] = username
+            request.session.save()
             messages.success(request, "Login successful.")
             next_url = request.POST.get("next")
             return redirect(next_url) if next_url else redirect("home")
@@ -119,7 +123,8 @@ def Login(request):
 
 
 def Logout(request):
-    auth.logout(request)
+    logout(request)
+    Session.objects.filter(session_key = request.session.session_key).delete()
     return redirect("home")
 
 

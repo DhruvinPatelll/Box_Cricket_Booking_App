@@ -51,6 +51,8 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+
 ROOT_URLCONF = "Tranquil_pro.urls"
 
 TEMPLATES = [
@@ -78,9 +80,9 @@ WSGI_APPLICATION = "Tranquil_pro.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "Tranquil1",
-        "USER": "mysite",
-        "PASSWORD": "mysite",
+        "NAME": "Tranquil",
+        "USER": "postgres",
+        "PASSWORD": "postgres",
         "HOST": "localhost",
         "PORT": "5432",
     }
